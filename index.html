@@ -3,198 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disha Singh | Data Analytics</title>
+    <title>Disha Singh // Data Analyst Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;600&display=swap');
 
         :root {
-            --bg: #00040d;
-            --neon-blue: #00f2ff;
-            --neon-pink: #ff00e5;
-            --glass: rgba(255, 255, 255, 0.03);
-            --warp-speed: 0.8s; /* INSANE SPEED */
+            --disco-pink: #ff00ff;
+            --disco-blue: #00ffff;
+            --disco-purple: #7000ff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --bg: #050505;
         }
 
         body {
-            background: var(--bg);
-            color: #e2e8f0;
-            font-family: 'Space Grotesk', sans-serif;
-            margin: 0; padding: 0;
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
             overflow-x: hidden;
-            display: flex; flex-direction: column; align-items: center;
+            background: radial-gradient(circle at 50% -20%, #1a0022, #050505);
         }
 
-        /* --- HYPER-WARP BACKGROUND --- */
-        .star-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #000; }
-        .star { 
-            position: absolute; width: 2px; height: 150px; 
-            background: linear-gradient(to bottom, transparent, var(--neon-blue), #fff); 
-            opacity: 0.8; animation: hyperWarp var(--warp-speed) linear infinite; 
+        /* --- AMBIENT DISCO GLOW --- */
+        .disco-light {
+            position: fixed;
+            width: 600px; height: 600px;
+            background: var(--disco-purple);
+            filter: blur(180px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.15;
+            animation: moveLight 12s infinite alternate;
         }
-        @keyframes hyperWarp {
-            0% { transform: translateY(-200px) scaleY(0); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(110vh) scaleY(3); opacity: 0; }
+        @keyframes moveLight {
+            0% { top: -10%; left: -10%; background: var(--disco-pink); }
+            100% { top: 70%; left: 70%; background: var(--disco-blue); }
         }
 
-        .container { max-width: 1100px; width: 90%; padding: 100px 0; z-index: 2; }
+        .marquee {
+            background: linear-gradient(90deg, var(--disco-pink), var(--disco-blue));
+            color: #000; padding: 12px 0; font-weight: 800;
+            text-transform: uppercase; overflow: hidden;
+            white-space: nowrap; position: fixed; top: 0; width: 100%; z-index: 100;
+        }
+        .marquee-content { display: inline-block; animation: scroll 25s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* --- GLITCH HEADER --- */
+        .container { max-width: 1100px; margin: 140px auto; padding: 20px; }
+
         header { text-align: center; margin-bottom: 80px; }
         h1 { 
-            font-size: 6rem; font-weight: 700; margin: 0; cursor: pointer;
-            text-transform: uppercase; letter-spacing: -3px;
-            background: linear-gradient(90deg, var(--neon-blue), #fff, var(--neon-pink));
+            font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 12vw, 7rem); 
+            line-height: 0.8; margin: 0; cursor: pointer;
+            background: linear-gradient(to bottom, #fff, #999);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.4));
-            transition: 0.3s;
+            transition: 0.5s;
         }
-        h1:hover { letter-spacing: 5px; filter: hue-rotate(45deg) brightness(1.2); }
-        .tagline { color: var(--neon-blue); letter-spacing: 8px; font-weight: 300; margin-top: 10px; }
+        h1:hover { letter-spacing: 10px; -webkit-text-fill-color: var(--disco-blue); }
 
         .glass-card {
             background: var(--glass);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 40px;
-            padding: 60px;
-            margin: 40px 0;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 50px;
+            margin-bottom: 40px;
         }
-        .glass-card:hover { transform: scale(1.02); border-color: var(--neon-pink); box-shadow: 0 0 40px rgba(255, 0, 229, 0.2); }
 
-        /* --- PROJECT DEEP DIVES --- */
-        .project-section { margin-bottom: 60px; }
-        .project-title { font-size: 2.2rem; color: #fff; margin: 0; display: flex; align-items: center; gap: 15px; }
-        .project-title::before { content: '>'; color: var(--neon-pink); }
-        .tech-stack { font-family: monospace; color: var(--neon-blue); font-size: 0.9rem; margin: 10px 0 20px 0; display: block; text-transform: uppercase; }
-        
-        .deep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-        .deep-item h4 { color: var(--neon-pink); margin-bottom: 8px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-        .deep-item p { margin: 0; line-height: 1.6; color: #94a3b8; }
+        /* --- FANCY DUAL COLUMN PROJECTS --- */
+        .project-grid-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-        /* --- THE COMMAND CENTER (BOTTOM DOCK) --- */
-        .command-dock {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;
-            width: 100%; margin-top: 60px;
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 30px;
+            transition: 0.4s;
+            display: flex; flex-direction: column;
         }
-        .dock-btn {
-            background: rgba(0, 242, 255, 0.05);
-            border: 1px solid var(--neon-blue);
-            padding: 25px; border-radius: 20px;
-            text-align: center; color: var(--neon-blue);
-            text-decoration: none; font-weight: bold;
-            transition: 0.3s; cursor: pointer;
+        .project-card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--disco-blue);
+            background: rgba(0, 255, 255, 0.05);
         }
-        .dock-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); transform: translateY(-10px); }
 
-        @media (max-width: 850px) {
-            h1 { font-size: 3.5rem; }
-            .deep-grid, .command-dock { grid-template-columns: 1fr; }
+        .project-chip {
+            background: var(--disco-pink); color: #fff;
+            padding: 5px 15px; border-radius: 50px;
+            font-size: 0.7rem; font-weight: 800; width: fit-content;
+            margin-bottom: 20px; text-transform: uppercase;
         }
+
+        .project-card h3 { font-family: 'Syne', sans-serif; font-size: 1.8rem; margin: 0 0 15px 0; color: #fff; }
+        .project-card p { font-size: 0.95rem; line-height: 1.6; color: #bbb; margin-bottom: 20px; flex-grow: 1; }
+
+        .repo-link {
+            font-size: 0.8rem; font-weight: bold; color: var(--disco-blue);
+            text-decoration: none; display: flex; align-items: center; gap: 8px;
+        }
+
+        /* --- CHILL SOCIAL DOCK --- */
+        .social-dock {
+            display: flex; justify-content: center; flex-wrap: wrap;
+            gap: 15px; margin-top: 80px;
+        }
+        .social-btn {
+            background: #fff; color: #000; padding: 18px 35px;
+            border-radius: 100px; text-decoration: none; font-weight: 800;
+            transition: 0.3s;
+        }
+        .social-btn:hover { background: var(--disco-pink); color: #fff; transform: scale(1.1) rotate(2deg); }
+
+        @media (max-width: 900px) { .project-grid-main { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <div class="star-container" id="stars"></div>
-
-    <div class="container">
-        <header>
-            <h1 onclick="this.innerText='SYSTEMS ONLINE'">DISHA SINGH</h1>
-            <div class="tagline">DATA ARCHITECT // 2026 EDITION</div>
-        </header>
-
-        <section class="glass-card">
-            <h2 style="color: var(--neon-pink); margin-top: 0;">⚡ THE VIBE</h2>
-            <p style="font-size: 1.3rem; line-height: 1.8;">
-                I don’t just "analyze" data—I architect intelligence. With an <strong>8.1 CGPA</strong> and a <strong>3-Star HackerRank</strong> dominance in Python and SQL, I specialize in transforming chaotic datasets into high-speed strategic pipelines. I thrive where deep learning meets business logic.
-            </p>
-        </section>
-
-        <section class="glass-card">
-            <h2 style="color: var(--neon-blue); margin-bottom: 50px;">💾 MISSION LOGS: PROJECT DEEP-DIVES</h2>
-
-            <div class="project-section">
-                <div class="project-title">Sales Performance Insight Engine</div>
-                <span class="tech-stack">Python // Pandas // Power BI // Advanced EDA</span>
-                <div class="deep-grid">
-                    <div class="deep-item">
-                        <h4>The Professional Problem</h4>
-                        <p>High-volume regional sales data was stagnating due to unoptimized resource allocation and hidden revenue leaks.</p>
-                    </div>
-                    <div class="deep-item">
-                        <h4>The Tech Execution</h4>
-                        <p>Built a custom Python ETL pipeline to automate data cleaning and performed deep regional trend analysis with Matplotlib.</p>
-                    </div>
-                    <div class="deep-item" style="grid-column: span 2;">
-                        <h4>The Scalable Result</h4>
-                        <p>Engineered an interactive Power BI command center allowing stakeholders to visualize real-time purchasing patterns, resulting in data-backed inventory shifts.</p>
-                    </div>
-                </div>
-            </div>
-
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05); margin: 40px 0;">
-
-            <div class="project-section">
-                <div class="project-title">LLaMA-2 Financial Neural Net</div>
-                <span class="tech-stack">LLM // PyTorch // PEFT (LoRA) // Hugging Face</span>
-                <div class="deep-grid">
-                    <div class="deep-item">
-                        <h4>The Professional Problem</h4>
-                        <p>Standard NLP models struggle with the high-stakes, nuanced vocabulary of financial market sentiment.</p>
-                    </div>
-                    <div class="deep-item">
-                        <h4>The Tech Execution</h4>
-                        <p>Implemented Parameter-Efficient Fine-Tuning (PEFT) using LoRA to specialize a LLaMA-2 model on niche financial datasets.</p>
-                    </div>
-                    <div class="deep-item" style="grid-column: span 2;">
-                        <h4>The Scalable Result</h4>
-                        <p>Achieved 83% accuracy in sentiment classification, creating a high-reliability layer for predictive risk assessment in live markets.</p>
-                    </div>
-                </div>
-            </div>
-
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05); margin: 40px 0;">
-
-            <div class="project-section">
-                <div class="project-title">Enterprise SQL Architecture</div>
-                <span class="tech-stack">MySQL // CTEs // Relational Modeling // Query Optimization</span>
-                <div class="deep-grid">
-                    <div class="deep-item">
-                        <h4>The Professional Problem</h4>
-                        <p>Manual weekly KPI tracking was causing 15% data error rates and massive latency in reporting cycles.</p>
-                    </div>
-                    <div class="deep-item">
-                        <h4>The Tech Execution</h4>
-                        <p>Architected complex SQL schemas using CTEs and window functions to automate inventory and revenue tracking.</p>
-                    </div>
-                    <div class="deep-item" style="grid-column: span 2;">
-                        <h4>The Scalable Result</h4>
-                        <p>Slashed query retrieval time by 30% and fully automated weekly reviews, ensuring 100% data integrity for management audits.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="command-dock">
-            <a href="tel:+919695953339" class="dock-btn">PH // 9695953339</a>
-            <a href="mailto:singhdisha2511@gmail.com" class="dock-btn">EM // DISHA@SINGH</a>
-            <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank" class="dock-btn">IN // LINKEDIN</a>
-            <a href="https://github.com/disha2511" target="_blank" class="dock-btn">GH // GITHUB</a>
+    <div class="disco-light"></div>
+    <div class="marquee">
+        <div class="marquee-content">
+            ✦ DISHA SINGH ✦ DATA ANALYST ✦ PYTHON & SQL EXPERT ✦ 8.1 CGPA ✦ HACKERRANK 3★ ✦ 1000+ LEETCODE CHALLENGES SMASHED ✦ REPO: DISHA2511/PORTFOLIO ✦
         </div>
     </div>
 
-    <script>
-        const container = document.getElementById('stars');
-        for (let i = 0; i < 60; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.animationDelay = Math.random() * 1 + 's';
-            star.style.animationDuration = (0.4 + Math.random() * 0.6) + 's';
-            container.appendChild(star);
-        }
-    </script>
+    <div class="container">
+        <header>
+            <h1 onclick="this.innerText='SYSTEM READY'">DISHA<br>SINGH</h1>
+            <p style="font-size: 1.4rem; color: var(--disco-blue); font-weight: 600; margin-top: 25px; letter-spacing: 4px;">
+                DATA ANALYST 
+            </p>
+        </header>
+
+        <section class="glass-card">
+            <h2 style="font-family: 'Syne'; font-size: 2.5rem; margin-top: 0;">The Vibe Check ✅</h2>
+            <p style="font-size: 1.25rem; line-height: 1.8; color: #ddd;">
+                Computer Science Engineer with an <strong>8.1 CGPA</strong>. I architect data stories that drive decisions. With <strong>1000+ LeetCode questions</strong> solved and a 3-star HackerRank streak, I live at the intersection of high-speed logic and beautiful insights.
+            </p>
+        </section>
+
+        <h2 style="font-family: 'Syne'; font-size: 3rem; text-align: center; margin-bottom: 50px;">Featured Mission Logs 💾</h2>
+
+        <div class="project-grid-main">
+            <div class="project-card">
+                <span class="project-chip">Intelligence Dashboard</span>
+                <h3>Sales Performance Insight Engine</h3>
+                <p>Architected an end-to-end Python pipeline to identify regional stagnation and revenue leaks. Conducted deep EDA to map customer behaviors into a dynamic Power BI interface.</p>
+                <a href="https://github.com/disha2511/portfolio" class="repo-link">🔗 View Repository</a>
+            </div>
+
+            <div class="project-card">
+                <span class="project-chip">Neural Networks</span>
+                <h3>LLaMA-2 Financial Neural Net</h3>
+                <p>Fine-tuned LLaMA-2 using LoRA/PEFT for high-stakes financial sentiment analysis. Achieved 83% accuracy in interpreting market nuances via PyTorch.</p>
+                <a href="https://github.com/disha2511/portfolio" class="repo-link">🔗 View Repository</a>
+            </div>
+
+            <div class="project-card">
+                <span class="project-chip">SQL Architecture</span>
+                <h3>Enterprise Database Optimization</h3>
+                <p>Developed complex MySQL schemas using CTEs and window functions to automate inventory flow, reducing report latency by 30% with 100% integrity.</p>
+                <a href="https://github.com/disha2511/portfolio" class="repo-link">🔗 View Repository</a>
+            </div>
+
+            <div class="project-card">
+                <span class="project-chip">Predictive Logic</span>
+                <h3>Python Trend Forecasting</h3>
+                <p>Leveraged Scikit-learn and Seaborn to build predictive models for market trend forecasting, minimizing operational risks through data-driven feature engineering.</p>
+                <a href="https://github.com/disha2511/portfolio" class="repo-link">🔗 View Repository</a>
+            </div>
+        </div>
+
+        <div class="social-dock">
+            <a href="tel:+919695953339" class="social-btn">🤙 9695953339</a>
+            <a href="mailto:singhdisha2511@gmail.com" class="social-btn">✉️ EMAIL ME</a>
+            <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank" class="social-btn">🔗 LINKEDIN</a>
+            <a href="https://github.com/disha2511" target="_blank" class="social-btn">💻 GITHUB</a>
+        </div>
+    </div>
+
 </body>
 </html>
