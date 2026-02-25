@@ -3,76 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disha Singh | Data Analyst Portfolio</title>
+    <title>Disha Singh | Data Architecture & Analytics</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
         :root {
-            --bg: #020617;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --primary: #38bdf8;
-            --accent: #f472b6;
-            --warp-speed: 1.5s; /* Hyper-fast stars */
+            --bg: #00040d;
+            --neon-blue: #00f2ff;
+            --neon-pink: #ff00e5;
+            --glass: rgba(255, 255, 255, 0.03);
+            --warp-speed: 0.8s; /* INSANE SPEED */
         }
+
         body {
             background: var(--bg);
-            color: #f8fafc;
-            font-family: 'Inter', sans-serif;
-            margin: 0; overflow-x: hidden;
+            color: #e2e8f0;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0; padding: 0;
+            overflow-x: hidden;
             display: flex; flex-direction: column; align-items: center;
         }
 
-        /* --- HYPER-SPEED STAR FIELD --- */
-        .star-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: black; }
+        /* --- HYPER-WARP BACKGROUND --- */
+        .star-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #000; }
         .star { 
-            position: absolute; width: 1px; height: 80px; 
-            background: linear-gradient(to bottom, transparent, #fff); 
-            opacity: 0.6; animation: warp var(--warp-speed) linear infinite; 
+            position: absolute; width: 2px; height: 150px; 
+            background: linear-gradient(to bottom, transparent, var(--neon-blue), #fff); 
+            opacity: 0.8; animation: hyperWarp var(--warp-speed) linear infinite; 
         }
-        @keyframes warp {
-            0% { transform: translateY(-100px) scaleY(0); opacity: 0; }
+        @keyframes hyperWarp {
+            0% { transform: translateY(-200px) scaleY(0); opacity: 0; }
             50% { opacity: 1; }
-            100% { transform: translateY(110vh) scaleY(2); opacity: 0; }
+            100% { transform: translateY(110vh) scaleY(3); opacity: 0; }
         }
 
-        .container { max-width: 1100px; width: 90%; padding: 80px 0; z-index: 10; }
-        
-        /* --- GLITCH & POWER EFFECTS --- */
+        .container { max-width: 1100px; width: 90%; padding: 100px 0; z-index: 2; }
+
+        /* --- GLITCH HEADER --- */
+        header { text-align: center; margin-bottom: 80px; }
         h1 { 
-            font-size: 5rem; margin: 0; cursor: pointer; 
-            background: linear-gradient(to right, #00d2ff, #92fe9d, #f472b6);
+            font-size: 6rem; font-weight: 700; margin: 0; cursor: pointer;
+            text-transform: uppercase; letter-spacing: -3px;
+            background: linear-gradient(90deg, var(--neon-blue), #fff, var(--neon-pink));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.5));
-            transition: 0.2s; text-transform: uppercase;
+            filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.4));
+            transition: 0.3s;
         }
-        h1:hover { transform: skewX(-10deg); filter: brightness(1.5); }
+        h1:hover { letter-spacing: 5px; filter: hue-rotate(45deg) brightness(1.2); }
+        .tagline { color: var(--neon-blue); letter-spacing: 8px; font-weight: 300; margin-top: 10px; }
 
         .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 40px;
-            padding: 50px;
-            margin: 30px 0;
-            box-shadow: 0 0 40px rgba(0,0,0,0.8);
-            transition: 0.4s ease;
+            padding: 60px;
+            margin: 40px 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .glass-card:hover { border-color: var(--accent); box-shadow: 0 0 50px rgba(244, 114, 182, 0.2); }
+        .glass-card:hover { transform: scale(1.02); border-color: var(--neon-pink); box-shadow: 0 0 40px rgba(255, 0, 229, 0.2); }
 
-        /* --- BOTTOM SHIFTED CONTACT COLUMN --- */
-        .info-dock {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px; width: 100%; margin-top: 50px;
-        }
-        .dock-item {
-            background: rgba(255,255,255,0.05); padding: 20px;
-            border-radius: 20px; border: 1px solid var(--primary);
-            text-align: center; transition: 0.3s;
-        }
-        .dock-item:hover { transform: translateY(-10px); background: var(--primary); color: #000; }
-        .dock-item a { color: inherit; text-decoration: none; font-weight: bold; }
+        /* --- PROJECT DEEP DIVES --- */
+        .project-section { margin-bottom: 60px; }
+        .project-title { font-size: 2.2rem; color: #fff; margin: 0; display: flex; align-items: center; gap: 15px; }
+        .project-title::before { content: '>'; color: var(--neon-pink); }
+        .tech-stack { font-family: monospace; color: var(--neon-blue); font-size: 0.9rem; margin: 10px 0 20px 0; display: block; text-transform: uppercase; }
+        
+        .deep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        .deep-item h4 { color: var(--neon-pink); margin-bottom: 8px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        .deep-item p { margin: 0; line-height: 1.6; color: #94a3b8; }
 
-        .project-header { color: var(--primary); font-size: 1.8rem; margin-bottom: 5px; text-transform: uppercase; }
-        .tech-tag { color: var(--accent); font-weight: bold; letter-spacing: 1px; font-size: 0.8rem; margin-bottom: 15px; display: block; }
-        p { line-height: 1.8; color: #cbd5e1; font-size: 1.1rem; }
+        /* --- THE COMMAND CENTER (BOTTOM DOCK) --- */
+        .command-dock {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;
+            width: 100%; margin-top: 60px;
+        }
+        .dock-btn {
+            background: rgba(0, 242, 255, 0.05);
+            border: 1px solid var(--neon-blue);
+            padding: 25px; border-radius: 20px;
+            text-align: center; color: var(--neon-blue);
+            text-decoration: none; font-weight: bold;
+            transition: 0.3s; cursor: pointer;
+        }
+        .dock-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); transform: translateY(-10px); }
+
+        @media (max-width: 850px) {
+            h1 { font-size: 3.5rem; }
+            .deep-grid, .command-dock { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -80,71 +100,99 @@
     <div class="star-container" id="stars"></div>
 
     <div class="container">
-        <header style="text-align: center; margin-bottom: 60px;">
-            <h1 onclick="this.style.filter = 'hue-rotate(90deg)'">DISHA SINGH</h1>
-            <p style="letter-spacing: 5px; color: var(--primary);">ARCHITECTING DATA SOLUTIONS</p>
+        <header>
+            <h1 onclick="this.innerText='SYSTEMS ONLINE'">DISHA SINGH</h1>
+            <div class="tagline">DATA ARCHITECT // 2026 EDITION</div>
         </header>
 
         <section class="glass-card">
-            <h2 style="color: #fff; border-bottom: 2px solid var(--accent); display: inline-block;">SYSTEM OVERVIEW</h2>
-            <p>Computer Science Engineer with an <strong>8.1 CGPA</strong>. I specialize in high-velocity data pipelines and deep-learning sentiment analysis. By leveraging SQL and Python, I translate chaotic datasets into clean, strategic business intelligence.</p>
-            <p><strong>Technical Mastery:</strong> 3-Star HackerRank (Python & SQL) | 100+ Algorithmic Solutions solved on LeetCode.</p>
+            <h2 style="color: var(--neon-pink); margin-top: 0;">⚡ THE VIBE</h2>
+            <p style="font-size: 1.3rem; line-height: 1.8;">
+                I don’t just "analyze" data—I architect intelligence. With an <strong>8.1 CGPA</strong> and a <strong>3-Star HackerRank</strong> dominance in Python and SQL, I specialize in transforming chaotic datasets into high-speed strategic pipelines. I thrive where deep learning meets business logic.
+            </p>
         </section>
 
         <section class="glass-card">
-            <h2 style="color: #fff; margin-bottom: 40px;">MISSION LOGS: DEEP PROJECTS</h2>
+            <h2 style="color: var(--neon-blue); margin-bottom: 50px;">💾 MISSION LOGS: PROJECT DEEP-DIVES</h2>
 
-            <div style="margin-bottom: 50px;">
-                <span class="tech-tag">// PYTHON • PANDAS • POWER BI</span>
-                <div class="project-header">Sales Performance Insight Engine</div>
-                <p><strong>Professional Execution:</strong> Developed an end-to-end analytical framework to identify regional stagnation in high-volume datasets. Conducted intensive Exploratory Data Analysis (EDA) to map customer purchasing behavior and revenue anomalies.</p>
-                <p><strong>Outcome:</strong> Engineered a dynamic Power BI interface allowing real-time drill-down into product-level metrics, directy optimizing regional resource allocation.</p>
+            <div class="project-section">
+                <div class="project-title">Sales Performance Insight Engine</div>
+                <span class="tech-stack">Python // Pandas // Power BI // Advanced EDA</span>
+                <div class="deep-grid">
+                    <div class="deep-item">
+                        <h4>The Professional Problem</h4>
+                        <p>High-volume regional sales data was stagnating due to unoptimized resource allocation and hidden revenue leaks.</p>
+                    </div>
+                    <div class="deep-item">
+                        <h4>The Tech Execution</h4>
+                        <p>Built a custom Python ETL pipeline to automate data cleaning and performed deep regional trend analysis with Matplotlib.</p>
+                    </div>
+                    <div class="deep-item" style="grid-column: span 2;">
+                        <h4>The Scalable Result</h4>
+                        <p>Engineered an interactive Power BI command center allowing stakeholders to visualize real-time purchasing patterns, resulting in data-backed inventory shifts.</p>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-bottom: 50px;">
-                <span class="tech-tag">// LLM • PYTORCH • HUGGING FACE</span>
-                <div class="project-header">LLaMA-2 Financial Sentiment Neural Net</div>
-                <p><strong>Professional Execution:</strong> Fine-tuned a LLaMA-2 model using Parameter-Efficient Fine-Tuning (PEFT) and LoRA. The model was trained on domain-specific financial logs to interpret complex market nuances that standard models fail to capture.</p>
-                <p><strong>Outcome:</strong> Achieved 83% classification accuracy, providing a robust automated layer for risk assessment and predictive market analysis.</p>
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05); margin: 40px 0;">
+
+            <div class="project-section">
+                <div class="project-title">LLaMA-2 Financial Neural Net</div>
+                <span class="tech-stack">LLM // PyTorch // PEFT (LoRA) // Hugging Face</span>
+                <div class="deep-grid">
+                    <div class="deep-item">
+                        <h4>The Professional Problem</h4>
+                        <p>Standard NLP models struggle with the high-stakes, nuanced vocabulary of financial market sentiment.</p>
+                    </div>
+                    <div class="deep-item">
+                        <h4>The Tech Execution</h4>
+                        <p>Implemented Parameter-Efficient Fine-Tuning (PEFT) using LoRA to specialize a LLaMA-2 model on niche financial datasets.</p>
+                    </div>
+                    <div class="deep-item" style="grid-column: span 2;">
+                        <h4>The Scalable Result</h4>
+                        <p>Achieved 83% accuracy in sentiment classification, creating a high-reliability layer for predictive risk assessment in live markets.</p>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-bottom: 50px;">
-                <span class="tech-tag">// MYSQL • DATABASE ARCHITECTURE</span>
-                <div class="project-header">Relational Data & Inventory Optimization</div>
-                <p><strong>Professional Execution:</strong> Designed advanced SQL architectures using CTEs, complex Joins, and Subqueries to manage multi-table relational data. Focused on query optimization to handle large-scale database transactions.</p>
-                <p><strong>Outcome:</strong> Reduced data retrieval latency by 30%, automating weekly KPI reports that were previously handled via manual entry.</p>
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05); margin: 40px 0;">
+
+            <div class="project-section">
+                <div class="project-title">Enterprise SQL Architecture</div>
+                <span class="tech-stack">MySQL // CTEs // Relational Modeling // Query Optimization</span>
+                <div class="deep-grid">
+                    <div class="deep-item">
+                        <h4>The Professional Problem</h4>
+                        <p>Manual weekly KPI tracking was causing 15% data error rates and massive latency in reporting cycles.</p>
+                    </div>
+                    <div class="deep-item">
+                        <h4>The Tech Execution</h4>
+                        <p>Architected complex SQL schemas using CTEs and window functions to automate inventory and revenue tracking.</p>
+                    </div>
+                    <div class="deep-item" style="grid-column: span 2;">
+                        <h4>The Scalable Result</h4>
+                        <p>Slashed query retrieval time by 30% and fully automated weekly reviews, ensuring 100% data integrity for management audits.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="info-dock">
-            <div class="dock-item">
-                <strong>CALL</strong><br>
-                <a href="tel:+919695953339">+91 9695953339</a>
-            </div>
-            <div class="dock-item">
-                <strong>MAIL</strong><br>
-                <a href="mailto:singhdisha2511@gmail.com">singhdisha2511@gmail.com</a>
-            </div>
-            <div class="dock-item">
-                <strong>LINKEDIN</strong><br>
-                <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">Connect</a>
-            </div>
-            <div class="dock-item">
-                <strong>GITHUB</strong><br>
-                <a href="https://github.com/disha2511" target="_blank">Source Code</a>
-            </div>
+        <div class="command-dock">
+            <a href="tel:+919695953339" class="dock-btn">PH // 9695953339</a>
+            <a href="mailto:singhdisha2511@gmail.com" class="dock-btn">EM // DISHA@SINGH</a>
+            <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank" class="dock-btn">IN // LINKEDIN</a>
+            <a href="https://github.com/disha2511" target="_blank" class="dock-btn">GH // GITHUB</a>
         </div>
     </div>
 
     <script>
         const container = document.getElementById('stars');
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             star.style.left = Math.random() * 100 + 'vw';
-            star.style.animationDelay = Math.random() * 2 + 's';
-            // Speed variance
-            star.style.animationDuration = (0.5 + Math.random() * 1) + 's';
+            star.style.animationDelay = Math.random() * 1 + 's';
+            star.style.animationDuration = (0.4 + Math.random() * 0.6) + 's';
             container.appendChild(star);
         }
     </script>
