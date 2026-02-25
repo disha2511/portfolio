@@ -3,64 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disha Singh | Data Analyst Portfolio</title>
+    <title>Disha Singh | Data Analyst</title>
     <style>
-        :root { --primary: #003366; --secondary: #0073b1; --light: #f8f9fa; --text: #333; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text); background-color: #e9ecef; margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        header { border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; text-align: center; }
-        h1 { margin: 0; color: var(--primary); font-size: 2.5em; text-transform: uppercase; }
-        .contact-links a { margin: 0 10px; text-decoration: none; color: var(--secondary); font-weight: bold; }
-        h2 { color: var(--primary); border-left: 5px solid var(--secondary); padding-left: 15px; margin-bottom: 20px; }
-        .project-card { background: var(--light); border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
-        .skill-badge { display: inline-block; background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; margin: 5px 2px; }
+        :root {
+            --bg: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --primary: #38bdf8;
+            --accent: #c084fc;
+            --text: #f8fafc;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+        }
+        .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { text-align: center; padding: 60px 0; }
+        h1 { 
+            font-size: 3.5rem; 
+            margin: 0; 
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+        .tagline { font-size: 1.2rem; color: #94a3b8; margin-top: 10px; }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        .glass-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+        h2 { font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        
+        .badge-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary);
+        }
+
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+
+        .stats { font-size: 1.1rem; color: var(--accent); font-weight: bold; }
+        
+        .cta-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        .cta-btn:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Disha Singh</h1>
-            <p><strong>Data Analyst | Python & SQL Specialist</strong></p>
-            <div class="contact-links">
-                <a href="mailto:singhdisha2511@gmail.com">Email</a> |
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
-                <a href="https://github.com/disha2511" target="_blank">GitHub</a>
-            </div>
-        </header>
 
-        <section>
-            <h2>Professional Summary</h2>
-            [cite_start]<p>Enthusiastic Computer Science undergraduate with an 8.1 CGPA[cite: 1, 14]. [cite_start]Skilled in Python and SQL with hands-on experience in developing scalable data-driven applications[cite: 5].</p>
-        </section>
+<div class="container">
+    <header>
+        <h1>DISHA SINGH</h1>
+        <p class="tagline">Data Analyst ✦ Python & SQL Specialist ✦ AI Explorer</p>
+        <div style="margin-top: 20px;">
+            <a href="mailto:singhdisha2511@gmail.com" class="cta-btn">Let's Connect!</a>
+        </div>
+    </header>
 
-        <section>
-            <h2>Technical Toolkit</h2>
-            [cite_start]<span class="skill-badge">Python (Pandas, NumPy, Matplotlib) [cite: 10, 11]</span>
-            [cite_start]<span class="skill-badge">SQL (MySQL) [cite: 10, 12]</span>
-            [cite_start]<span class="skill-badge">Power BI & Excel [cite: 12]</span>
-            [cite_start]<span class="skill-badge">Financial NLP (LLaMA-2) [cite: 17]</span>
-        </section>
+    <section class="glass-card">
+        <h2>⚡ The Vibe</h2>
+        <p>Enthusiastic CS undergraduate [cite: 4] with an **8.1 CGPA**. I don't just "clean data"—I tell stories with it. Passionate about building scalable systems and finding the "why" behind the numbers[cite: 5, 6].</p>
+        <div class="stats">3★ HackerRank (Python & SQL) ✦ 100+ LeetCode Solved </div>
+    </section>
 
-        <section>
-            <h2>Featured Projects</h2>
-            <div class="project-card">
-                [cite_start]<strong>Sales Data Analysis Dashboard [cite: 23]</strong>
-                [cite_start]<p>Analyzed large sales datasets to identify trends and customer behavior[cite: 24, 25]. [cite_start]Created interactive dashboards in Power BI to support data-driven decisions[cite: 28].</p>
-            </div>
-            <div class="project-card">
-                [cite_start]<strong>Financial Sentiment Analysis (LLaMA-2) [cite: 17]</strong>
-                [cite_start]<p>Designed a sentiment analysis system using instruction tuning to classify financial texts with 83% accuracy[cite: 17, 19].</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Certifications & Stats</h2>
-            <ul>
-                [cite_start]<li>3-star rating in Python and MySQL on HackerRank[cite: 35].</li>
-                [cite_start]<li>Data Science Virtual Internship (AICTE)[cite: 30, 34].</li>
-                [cite_start]<li>Oracle Cloud Infrastructure Foundations[cite: 35].</li>
-            </ul>
-        </section>
+    <h2>🛠️ Tech Stack</h2>
+    <div class="badge-container" style="margin-bottom: 40px;">
+        <span class="badge">Python (Pandas/NumPy) [cite: 10, 11]</span>
+        <span class="badge">SQL (MySQL) [cite: 10, 12]</span>
+        <span class="badge">Power BI [cite: 12]</span>
+        <span class="badge">LLaMA-2 NLP [cite: 17]</span>
+        <span class="badge">Cloud Foundations </span>
     </div>
+
+    <h2>Projects That Hit Different</h2>
+    <div class="project-grid">
+        <div class="glass-card">
+            <h3>📊 Sales Insight Engine</h3>
+            <p>Built a Power BI dashboard that identifies regional trends and revenue anomalies[cite: 24, 28].</p>
+        </div>
+        <div class="glass-card">
+            <h3>🤖 Financial AI</h3>
+            <p>Fine-tuned LLaMA-2 to understand market sentiment with 83% accuracy[cite: 17, 19].</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; color: #64748b; margin-top: 50px;">
+        <p>Built with ✨ by Disha | 2026</p>
+    </footer>
+</div>
+
 </body>
 </html>
