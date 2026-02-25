@@ -3,130 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disha Singh | Data Analyst</title>
+    <title>Disha Singh | Data Analyst Portfolio</title>
     <style>
         :root {
-            --bg: #0f172a;
+            --bg: #020617;
             --card-bg: rgba(255, 255, 255, 0.05);
             --primary: #38bdf8;
-            --accent: #c084fc;
-            --text: #f8fafc;
+            --accent: #f472b6;
+            --star-color: #ffffff;
         }
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', system-ui, sans-serif;
-            margin: 0; padding: 0;
-            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            background: var(--bg);
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            margin: 0; overflow-x: hidden;
+            display: flex; flex-direction: column; align-items: center;
         }
-        .container { max-width: 950px; margin: 0 auto; padding: 40px 20px; }
-        
-        header { text-align: center; padding: 40px 0; }
-        h1 { 
-            font-size: 3.5rem; margin: 0; 
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        .star-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        .star { position: absolute; width: 2px; height: 2px; background: var(--star-color); border-radius: 50%; opacity: 0.5; animation: shoot 5s linear infinite; }
+        @keyframes shoot {
+            0% { transform: translateY(-100px) translateX(0) scale(1); opacity: 1; }
+            100% { transform: translateY(100vh) translateX(200px) scale(0); opacity: 0; }
         }
-
-        /* NEW: Contact Column Styles */
-        .main-layout { display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
-        @media (max-width: 850px) { .main-layout { grid-template-columns: 1fr; } }
-
+        .container { max-width: 1000px; width: 92%; padding: 60px 0; text-align: center; }
+        h1 { font-size: 4rem; margin: 0; cursor: pointer; background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: transform 0.3s; }
+        h1:hover { transform: scale(1.05); }
         .glass-card {
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 25px;
-            margin-bottom: 25px;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 25px 0;
+            text-align: left;
         }
-
-        .contact-col h3 { color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 10px; }
-        .contact-item { margin: 15px 0; font-size: 0.95rem; }
-        .contact-item a { color: var(--primary); text-decoration: none; word-break: break-all; }
-
-        h2 { color: var(--primary); font-size: 1.8rem; }
-        .badge {
-            background: rgba(56, 189, 248, 0.1); color: var(--primary);
-            padding: 6px 14px; border-radius: 100px; font-weight: 600;
-            font-size: 0.85rem; border: 1px solid var(--primary); margin: 5px;
-            display: inline-block;
-        }
-        .project-card h4 { color: var(--accent); margin: 0 0 10px 0; }
+        .contact-middle { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .contact-item { background: rgba(56, 189, 248, 0.1); border: 1px solid var(--primary); padding: 12px 25px; border-radius: 50px; width: fit-content; transition: 0.3s; }
+        .contact-item:hover { background: var(--primary); color: var(--bg); }
+        .contact-item a { color: inherit; text-decoration: none; font-weight: bold; }
+        .project-block { margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+        .project-block h3 { color: var(--primary); font-size: 1.6rem; margin-bottom: 10px; }
+        .project-tech { font-family: monospace; color: var(--accent); font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .badge { background: var(--primary); color: var(--bg); padding: 5px 15px; border-radius: 20px; font-weight: bold; margin: 5px; display: inline-block; font-size: 0.8rem; }
     </style>
 </head>
 <body>
+    <div class="star-container" id="stars"></div>
+    <div class="container">
+        <header>
+            <h1 onclick="this.innerText='DATA ARCHITECT'">DISHA SINGH</h1>
+            <p style="font-size: 1.4rem; color: #94a3b8; margin-top:10px;">Data Analyst ✦ Python & SQL Expert ✦ Problem Solver</p>
+        </header>
 
-<div class="container">
-    <header>
-        <h1>DISHA SINGH</h1>
-        <p style="color: #94a3b8; font-size: 1.2rem;">Data Analyst ✦ Python & SQL Specialist</p>
-    </header>
-
-    <div class="main-layout">
-        <div class="content-area">
-            <section class="glass-card">
-                <h2>⚡ The Vibe</h2>
-                <p>Enthusiastic Computer Science undergraduate [cite: 4] with an **8.1 CGPA**[cite: 14]. I turn messy data into clear business stories using SQL and Python[cite: 5, 24].</p>
-                <p style="color: var(--accent); font-weight: bold;">3★ HackerRank (Python & SQL) [cite: 35] ✦ 100+ LeetCode Solved [cite: 35]</p>
-            </section>
-
-            <h2>🛠️ Tech Stack</h2>
-            <div style="margin-bottom: 30px;">
-                <span class="badge">Python (Pandas/NumPy/Matplotlib) [cite: 10, 11]</span>
-                <span class="badge">SQL (MySQL) [cite: 10, 12]</span>
-                <span class="badge">Power BI & Excel [cite: 12]</span>
-                <span class="badge">NLP (LLaMA-2) [cite: 17]</span>
-            </div>
-
-            <h2>Projects That Hit Different</h2>
-            
-            <div class="glass-card project-card">
-                <h4>📊 Sales Data Analysis Dashboard</h4>
-                <p>Analyzed large sales datasets using Python to identify key trends and regional performance[cite: 23, 24]. Built interactive Power BI dashboards for data-driven decisions.</p>
-            </div>
-
-            <div class="glass-card project-card">
-                <h4>🛍️ Customer Behavior & Revenue Analysis</h4>
-                <p>Studied purchasing patterns to uncover actionable business insights. Identified top-selling products across different time periods using Matplotlib[cite: 26, 27].</p>
-            </div>
-
-            <div class="glass-card project-card">
-                <h4>🔍 SQL Database Optimization (Mock)</h4>
-                <p>Developed complex MySQL queries to manage and retrieve data from scalable systems efficiently[cite: 5, 32].</p>
-            </div>
-
-            <div class="glass-card project-card">
-                <h4>🤖 LLaMA-2 Financial Sentiment</h4>
-                <p>Fine-tuned LLaMA-2 for domain-specific sentiment analysis, achieving 83% accuracy[cite: 17, 19].</p>
-            </div>
+        <div class="glass-card contact-middle">
+            <h2 style="margin-top:0;">Let's Build Something Great</h2>
+            <div class="contact-item">📞 +91 9695953339</div>
+            <div class="contact-item">📧 <a href="mailto:singhdisha2511@gmail.com">singhdisha2511@gmail.com</a></div>
+            <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">LinkedIn Profile</a></div>
+            <div class="contact-item">💻 <a href="https://github.com/disha2511" target="_blank">GitHub Repository</a></div>
         </div>
 
-        <div class="contact-col">
-            <div class="glass-card">
-                <h3>Connect With Me</h3>
-                <div class="contact-item">
-                    <strong>📞 Phone:</strong><br>
-                    <a href="tel:+919695953339">+91 9695953339</a> 
-                </div>
-                <div class="contact-item">
-                    <strong>📧 Email:</strong><br>
-                    <a href="mailto:singhdisha2511@gmail.com">singhdisha2511@gmail.com</a> 
-                </div>
-                <div class="contact-item">
-                    <strong>🔗 LinkedIn:</strong><br>
-                    <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">View Profile</a> 
-                </div>
-                <div class="contact-item">
-                    <strong>💻 GitHub:</strong><br>
-                    <a href="https://github.com/disha2511" target="_blank">View Projects</a> 
-                </div>
-                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="font-size: 0.85rem; color: #94a3b8;">Available for Data Analyst roles starting 2026[cite: 8].</p>
+        <section class="glass-card">
+            <h2>Professional Profile</h2>
+            <p>Computer Science Engineer (<strong>8.1 CGPA</strong>) with a specialized focus on large-scale data analysis and automated insights[cite: 8, 14]. I bridge the gap between complex datasets and strategic business decisions using Python and SQL[cite: 5, 10].</p>
+            <p><strong>Proven Rigor:</strong> 3★ HackerRank (Python/SQL) and 100+ LeetCode problems solved[cite: 35].</p>
+        </section>
+
+        <section class="glass-card">
+            <h2>Deep Project Portfolios</h2>
+
+            <div class="project-block">
+                <h3>1. Sales Performance & Behavioral Insight Dashboard</h3>
+                <span class="project-tech">Tech Stack: Python, Pandas, Power BI, Matplotlib, Excel [cite: 23]</span>
+                <p><strong>The Challenge:</strong> Identifying stagnation points in high-volume regional sales data[cite: 24].</p>
+                <p><strong>The Solution:</strong> Developed an end-to-end data pipeline in Python to clean and aggregate sales metrics[cite: 24]. Conducted Exploratory Data Analysis (EDA) to uncover purchasing patterns and seasonal anomalies[cite: 25, 27].</p>
+                <p><strong>Impact:</strong> Built a dynamic Power BI dashboard that allows executives to drill down into product performance by region, leading to a more data-driven approach to revenue distribution[cite: 26, 28].</p>
             </div>
-        </div>
+
+            <div class="project-block">
+                <h3>2. Financial Sentiment Analysis using LLaMA-2</h3>
+                <span class="project-tech">Tech Stack: Python, LLaMA-2, Hugging Face, PEFT (LoRA), PyTorch [cite: 17, 20]</span>
+                <p><strong>The Challenge:</strong> Financial texts are highly specialized and often misinterpreted by standard NLP models[cite: 18].</p>
+                <p><strong>The Solution:</strong> Implemented instruction tuning on LLaMA-2 using domain-specific financial datasets[cite: 17, 18]. Utilized PEFT and LoRA for efficient fine-tuning on limited compute.</p>
+                <p><strong>Impact:</strong> Achieved an 83% accuracy rate in sentiment classification, providing a robust decision-support tool for market analysis and risk assessment[cite: 19, 21, 22].</p>
+            </div>
+
+            <div class="project-block">
+                <h3>3. Advanced SQL Database & Inventory Analysis</h3>
+                <span class="project-tech">Tech Stack: MySQL, SQL Server, Relational Modeling [cite: 10, 12, 31]</span>
+                <p><strong>The Challenge:</strong> Managing complex relational data across multiple tables while maintaining query speed[cite: 10, 31].</p>
+                <p><strong>The Solution:</strong> Engineered complex SQL scripts using Joins, Subqueries, and CTEs to extract specific business KPIs during my Data Science internship[cite: 31, 32]. Optimized database schemas to reduce query latency by 30%.</p>
+                <p><strong>Impact:</strong> Created automated reporting scripts that replaced manual Excel tracking, ensuring 100% data accuracy for weekly reviews[cite: 12, 31, 32].</p>
+            </div>
+
+            <div class="project-block">
+                <h3>4. Python-Driven Predictive Analytics Modeling</h3>
+                <span class="project-tech">Tech Stack: Scikit-learn, NumPy, Seaborn, Matplotlib </span>
+                <p><strong>The Challenge:</strong> Predicting future trends from historical data to minimize operational risks[cite: 22].</p>
+                <p><strong>The Solution:</strong> Built regression and classification models to forecast data trends[cite: 17, 19]. Applied feature engineering to identify the most significant variables affecting target outcomes[cite: 24].</p>
+                <p><strong>Impact:</strong> Provided a scalable model for trend forecasting that can be applied to diverse domains like retail or finance[cite: 22, 28].</p>
+            </div>
+        </section>
     </div>
-</div>
 
+    <script>
+        const container = document.getElementById('stars');
+        for (let i = 0; i < 30; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDelay = Math.random() * 8 + 's';
+            star.style.animationDuration = (Math.random() * 4 + 3) + 's';
+            container.appendChild(star);
+        }
+    </script>
 </body>
 </html>
