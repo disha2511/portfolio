@@ -5,58 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disha Singh | Data Analyst Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 20px; background: #f4f7f6; }
-        header { text-align: center; padding: 50px 0; background: #2c3e50; color: white; border-radius: 8px; }
-        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #2980b9; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .skill-tag { display: inline-block; background: #e1f5fe; color: #01579b; padding: 5px 12px; border-radius: 15px; margin: 5px; font-size: 0.9em; font-weight: bold; }
-        .project { margin-bottom: 20px; }
+        :root { --primary: #003366; --secondary: #0073b1; --light: #f8f9fa; --text: #333; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text); background-color: #e9ecef; margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        header { border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; text-align: center; }
+        h1 { margin: 0; color: var(--primary); font-size: 2.5em; text-transform: uppercase; }
+        .contact-links a { margin: 0 10px; text-decoration: none; color: var(--secondary); font-weight: bold; }
+        h2 { color: var(--primary); border-left: 5px solid var(--secondary); padding-left: 15px; margin-bottom: 20px; }
+        .project-card { background: var(--light); border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
+        .skill-badge { display: inline-block; background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; margin: 5px 2px; }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Disha Singh</h1>
-    <p>Data Analyst | Python & SQL Specialist</p>
-    <p>singhdisha2511@gmail.com | Greater Noida, India</p>
-</header>
-
-<section id="summary">
-    <h2>Professional Summary</h2>
-    <p>Enthusiastic Computer Science undergraduate with a solid foundation in programming and problem-solving[cite: 4]. Skilled in Python and SQL with hands-on experience developing scalable systems and data-driven applications[cite: 5].</p>
-</section>
-
-<section id="skills">
-    <h2>Technical Toolkit</h2>
-    <div>
-        <span class="skill-tag">Python (Pandas, NumPy, Matplotlib)</span>
-        <span class="skill-tag">SQL (MySQL)</span>
-        <span class="skill-tag">Power BI & Excel</span>
-        <span class="skill-tag">LLaMA-2 & NLP</span>
-        <span class="skill-tag">Oracle Cloud Infrastructure</span>
+    <div class="container">
+        <header>
+            <h1>Disha Singh</h1>
+            <p><strong>Data Analyst | Python & SQL Specialist</strong> [cite: 5, 10]</p>
+            <div class="contact-links">
+                <a href="mailto:singhdisha2511@gmail.com">Email</a> [cite: 2] |
+                <a href="https://linkedin.com/in/disha-singh" target="_blank">LinkedIn</a> [cite: 2] |
+                <a href="https://github.com/disha2511" target="_blank">GitHub</a> [cite: 2]
+            </div>
+        </header>
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Enthusiastic Computer Science undergraduate with a solid foundation in programming and problem-solving[cite: 4]. Specialized in leveraging Python and SQL to develop scalable systems and data-driven insights[cite: 5].</p>
+        </section>
+        <section>
+            <h2>Technical Toolkit</h2>
+            <span class="skill-badge">Python (Pandas, NumPy, Matplotlib)</span> [cite: 10, 11]
+            <span class="skill-badge">SQL (MySQL)</span> [cite: 10, 12]
+            <span class="skill-badge">Power BI & Excel</span> [cite: 12, 23]
+            <span class="skill-badge">Financial NLP (LLaMA-2)</span> [cite: 17]
+        </section>
+        <section>
+            <h2>Key Projects</h2>
+            <div class="project-card">
+                <strong>Sales Data Analysis Dashboard</strong>
+                <p>Analyzed sales datasets using Python and Pandas to identify trends[cite: 23, 24]. Built interactive Power BI dashboards to support data-driven business decisions[cite: 28].</p>
+            </div>
+            <div class="project-card">
+                <strong>Financial Sentiment Analysis (LLaMA-2)</strong>
+                <p>Designed a system using instruction tuning to classify financial texts with 83% accuracy[cite: 17, 19]. Utilized PyTorch and Hugging Face for model evaluation[cite: 20].</p>
+            </div>
+        </section>
     </div>
-</section>
-
-<section id="projects">
-    <h2>Featured Data Projects</h2>
-    <div class="project">
-        <h3>Sales Data Analysis Dashboard</h3>
-        <p>Analyzed large datasets to identify key trends and customer purchasing behavior[cite: 24, 25]. Built interactive dashboards in <strong>Power BI</strong> to support data-driven business decisions[cite: 28].</p>
-    </div>
-    <div class="project">
-        <h3>Financial Sentiment Analysis (LLaMA-2)</h3>
-        <p>Designed a system using instruction tuning to classify financial texts with <strong>83% accuracy</strong>[cite: 17, 19]. Utilized PyTorch and Hugging Face for model evaluation[cite: 20].</p>
-    </div>
-</section>
-
-<section id="achievements">
-    <h2>Certifications & Stats</h2>
-    <ul>
-        <li>3-star rating in Python & MySQL on HackerRank[cite: 35].</li>
-        <li>100+ LeetCode problems solved[cite: 35].</li>
-        <li>Data Science Internship - AICTE Virtual Internship[cite: 34].</li>
-    </ul>
-</section>
-
 </body>
 </html>
