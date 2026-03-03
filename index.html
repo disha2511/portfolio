@@ -10,10 +10,10 @@
 <style>
 :root {
     --bg: #fdf8f6;
-    --text: #2a2a2a;
+    --text: #2b2b2b;
     --subtle: #6e6e6e;
-    --accent: #d8a7b1;
-    --border: #f1e6e9;
+    --accent: #d890a0;
+    --border: #f0e4e7;
 }
 
 body {
@@ -24,39 +24,39 @@ body {
     overflow-x: hidden;
 }
 
-/* 🌸 Pink Tree Background */
+/* 🌸 JAPANESE MAPLE TREE */
 .tree {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 350px;
-    opacity: 0.25;
+    width: 420px;
+    opacity: 0.18;
     z-index: -1;
 }
 
-/* 🍃 Floating Petals */
-.petal {
+/* 🍃 Falling Leaves (Wind Effect) */
+.leaf {
     position: fixed;
     top: -20px;
-    width: 12px;
-    height: 12px;
-    background: #f3b6c1;
-    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background: #f4a6b7;
+    border-radius: 50% 0 50% 50%;
     opacity: 0.6;
     animation: fall linear infinite;
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(-10vh) translateX(0);
+        transform: translate(0, -10vh) rotate(0deg);
     }
     100% {
-        transform: translateY(110vh) translateX(100px);
+        transform: translate(200px, 110vh) rotate(360deg);
     }
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: 90px auto;
     padding: 20px;
 }
@@ -86,7 +86,7 @@ h1 {
 }
 
 section {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
 }
 
 .about {
@@ -94,10 +94,6 @@ section {
     line-height: 1.8;
     color: var(--subtle);
     max-width: 780px;
-}
-
-.about + .about {
-    margin-top: 15px;
 }
 
 .projects-title {
@@ -115,6 +111,11 @@ section {
 .project-card {
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
 }
 
 .project-tag {
@@ -142,6 +143,11 @@ section {
     color: var(--accent);
 }
 
+.repo-link:hover {
+    opacity: 0.7;
+}
+
+/* Contact */
 .contact-section {
     background: #ffffff;
     padding: 35px;
@@ -188,12 +194,12 @@ footer {
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
 
     .tree {
-        width: 250px;
-        opacity: 0.15;
+        width: 260px;
+        opacity: 0.12;
     }
 }
 </style>
@@ -201,20 +207,20 @@ footer {
 
 <body>
 
-<!-- 🌸 Tree SVG -->
-<img class="tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Cherry_blossom_tree.svg/512px-Cherry_blossom_tree.svg.png">
+<!-- 🌸 Japanese Maple Tree -->
+<img class="tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cherry_blossom_tree_vector.svg/512px-Cherry_blossom_tree_vector.svg.png">
 
-<!-- 🍃 Floating Petals -->
-<div class="petal" style="left:10%; animation-duration:12s;"></div>
-<div class="petal" style="left:30%; animation-duration:15s;"></div>
-<div class="petal" style="left:50%; animation-duration:18s;"></div>
-<div class="petal" style="left:70%; animation-duration:14s;"></div>
-<div class="petal" style="left:85%; animation-duration:16s;"></div>
+<!-- 🍃 Wind Leaves -->
+<div class="leaf" style="left:15%; animation-duration:12s;"></div>
+<div class="leaf" style="left:35%; animation-duration:15s;"></div>
+<div class="leaf" style="left:55%; animation-duration:18s;"></div>
+<div class="leaf" style="left:75%; animation-duration:14s;"></div>
+<div class="leaf" style="left:90%; animation-duration:16s;"></div>
 
 <div class="container">
 
 <header>
-    <h1>Disha Singh 🌷</h1>
+    <h1>Disha Singh</h1>
     <div class="subtitle">Data Analyst | Python • SQL • Power BI</div>
     <div class="divider"></div>
 </header>
@@ -225,25 +231,56 @@ footer {
         into meaningful business intelligence. With strong foundations in SQL architecture,
         Python automation, and analytical problem-solving, I design scalable data-driven solutions.
     </p>
+</section>
 
-    <p class="about">
-        💗 I believe data should not only inform decisions but inspire clarity.
-        Currently open to impactful opportunities and collaborations.
-    </p>
+<section>
+    <h2 class="projects-title">Selected Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <div class="project-tag">Data Intelligence</div>
+            <h3>Sales Performance Insight Engine</h3>
+            <p>Built an end-to-end Python analytics pipeline with interactive dashboards to identify revenue trends and performance gaps.</p>
+            <a href="#" class="repo-link">View Repository →</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-tag">Machine Learning</div>
+            <h3>LLaMA-2 Financial Sentiment Model</h3>
+            <p>Fine-tuned LLaMA-2 using PEFT (LoRA) for financial sentiment analysis and improved domain-specific prediction reliability.</p>
+            <a href="#" class="repo-link">View Repository →</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-tag">Database Engineering</div>
+            <h3>Enterprise SQL Optimization</h3>
+            <p>Designed optimized MySQL schemas using CTEs and window functions to improve query performance and ensure data integrity.</p>
+            <a href="#" class="repo-link">View Repository →</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-tag">Predictive Analytics</div>
+            <h3>Market Forecasting Model</h3>
+            <p>Built predictive models with feature engineering techniques to forecast trends and reduce operational risk.</p>
+            <a href="#" class="repo-link">View Repository →</a>
+        </div>
+
+    </div>
 </section>
 
 <section class="contact-section">
-    <h2 class="contact-title">Let’s Connect 💌</h2>
+    <h2 class="contact-title">Let’s Connect</h2>
     <div class="contact">
-        <a href="mailto:singhdisha2511@gmail.com">✉️ Email</a>
-        <a href="tel:+919695953339">📞 9695953339</a>
-        <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">💼 LinkedIn</a>
-        <a href="https://github.com/disha2511" target="_blank">💻 GitHub</a>
+        <a href="mailto:singhdisha2511@gmail.com">Email</a>
+        <a href="tel:+919695953339">9695953339</a>
+        <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">LinkedIn</a>
+        <a href="https://github.com/disha2511" target="_blank">GitHub</a>
     </div>
 </section>
 
 <footer>
-    © 2026 Disha Singh 🌸
+    © 2026 Disha Singh
 </footer>
 
 </div>
