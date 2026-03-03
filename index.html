@@ -13,7 +13,7 @@
     --text: #2a2a2a;
     --subtle: #6e6e6e;
     --accent: #d8a7b1;
-    --border: #f0e4e7;
+    --border: #f1e6e9;
 }
 
 body {
@@ -21,63 +21,100 @@ body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
+    overflow-x: hidden;
+}
+
+/* 🌸 Pink Tree Background */
+.tree {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+/* 🍃 Floating Petals */
+.petal {
+    position: fixed;
+    top: -20px;
+    width: 12px;
+    height: 12px;
+    background: #f3b6c1;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) translateX(0);
+    }
+    100% {
+        transform: translateY(110vh) translateX(100px);
+    }
 }
 
 .container {
     max-width: 1000px;
-    margin: 100px auto;
+    margin: 90px auto;
     padding: 20px;
 }
 
 header {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
     margin: 0;
-    font-weight: 700;
 }
 
 .subtitle {
-    margin-top: 12px;
+    margin-top: 8px;
     font-size: 1.1rem;
     color: var(--subtle);
-    letter-spacing: 1px;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 25px 0;
+    border-radius: 10px;
 }
 
 section {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .about {
-    font-size: 1.1rem;
-    line-height: 1.9;
+    font-size: 1.05rem;
+    line-height: 1.8;
     color: var(--subtle);
-    max-width: 800px;
+    max-width: 780px;
+}
+
+.about + .about {
+    margin-top: 15px;
 }
 
 .projects-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 50px;
+    font-size: 2rem;
+    margin-bottom: 40px;
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 50px;
 }
 
 .project-card {
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
 }
 
 .project-tag {
@@ -85,12 +122,11 @@ section {
     font-weight: 600;
     color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .project-card h3 {
     margin: 10px 0;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
 }
 
 .project-card p {
@@ -104,22 +140,29 @@ section {
     text-decoration: none;
     font-weight: 600;
     color: var(--accent);
-    transition: 0.2s ease;
 }
 
-.repo-link:hover {
-    opacity: 0.7;
+.contact-section {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
 }
 
 .contact {
-    margin-top: 80px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
 .contact a {
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 50px;
     border: 1px solid var(--accent);
     text-decoration: none;
@@ -134,7 +177,7 @@ section {
 }
 
 footer {
-    margin-top: 80px;
+    margin-top: 60px;
     font-size: 0.9rem;
     color: var(--subtle);
 }
@@ -145,78 +188,65 @@ footer {
     }
 
     h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+    }
+
+    .tree {
+        width: 250px;
+        opacity: 0.15;
     }
 }
 </style>
 </head>
+
 <body>
+
+<!-- 🌸 Tree SVG -->
+<img class="tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Cherry_blossom_tree.svg/512px-Cherry_blossom_tree.svg.png">
+
+<!-- 🍃 Floating Petals -->
+<div class="petal" style="left:10%; animation-duration:12s;"></div>
+<div class="petal" style="left:30%; animation-duration:15s;"></div>
+<div class="petal" style="left:50%; animation-duration:18s;"></div>
+<div class="petal" style="left:70%; animation-duration:14s;"></div>
+<div class="petal" style="left:85%; animation-duration:16s;"></div>
+
 <div class="container">
+
 <header>
-    <h1>Disha Singh</h1>
-    <div class="subtitle">Data Analyst </div>
+    <h1>Disha Singh 🌷</h1>
+    <div class="subtitle">Data Analyst | Python • SQL • Power BI</div>
+    <div class="divider"></div>
 </header>
+
 <section>
     <p class="about">
-        I am a Computer Science Engineer focused on transforming complex datasets 
-        into meaningful business intelligence. With strong foundations in SQL, 
-        Python automation, and analytical problem-solving, I design scalable 
-        data-driven solutions that support strategic decision-making.
-        <br><br>
+        I am a Computer Science Engineer passionate about transforming complex datasets 
+        into meaningful business intelligence. With strong foundations in SQL architecture,
+        Python automation, and analytical problem-solving, I design scalable data-driven solutions.
+    </p>
+
+    <p class="about">
+        💗 I believe data should not only inform decisions but inspire clarity.
         Currently open to impactful opportunities and collaborations.
     </p>
 </section>
-<section>
-    <h2 class="projects-title">Selected Projects</h2>
 
-    <div class="project-grid">
-
-        <div class="project-card">
-            <div class="project-tag">Data Intelligence</div>
-            <h3>Sales Performance Insight Engine</h3>
-            <p>Developed an end-to-end analytics pipeline with interactive dashboards to identify revenue trends and regional performance gaps.</p>
-            <a href="#" class="repo-link">View Repository →</a>
-        </div>
-
-        <div class="project-card">
-            <div class="project-tag">Machine Learning</div>
-            <h3>LLaMA-2 Financial Sentiment Model</h3>
-            <p>Fine-tuned LLaMA-2 for financial sentiment analysis using PEFT (LoRA), improving prediction reliability for market interpretation.</p>
-            <a href="#" class="repo-link">View Repository →</a>
-        </div>
-
-        <div class="project-card">
-            <div class="project-tag">Database Engineering</div>
-            <h3>Enterprise SQL Optimization</h3>
-            <p>Engineered optimized MySQL schemas using CTEs and window functions to improve query efficiency and data integrity.</p>
-            <a href="#" class="repo-link">View Repository →</a>
-        </div>
-
-        <div class="project-card">
-            <div class="project-tag">Predictive Analytics</div>
-            <h3>Market Forecasting Model</h3>
-            <p>Built predictive models with advanced feature engineering to forecast trends and support operational planning.</p>
-            <a href="#" class="repo-link">View Repository →</a>
-        </div>
-
+<section class="contact-section">
+    <h2 class="contact-title">Let’s Connect 💌</h2>
+    <div class="contact">
+        <a href="mailto:singhdisha2511@gmail.com">✉️ Email</a>
+        <a href="tel:+919695953339">📞 9695953339</a>
+        <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">💼 LinkedIn</a>
+        <a href="https://github.com/disha2511" target="_blank">💻 GitHub</a>
     </div>
 </section>
 
-<section class="contact">
-    <a Contact : 9695953339 </a>
-    <a href="mailto:singhdisha2511@gmail.com">Email</a>
-    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    <a href="https://github.com" target="_blank">GitHub</a>
-</section>
-
 <footer>
-    © 2026 Disha Singh
+    © 2026 Disha Singh 🌸
 </footer>
 
 </div>
 
 </body>
 </html>
-
-
-
