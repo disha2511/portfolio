@@ -1,161 +1,289 @@
-npm install framer-motion
-"use client";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disha Singh | Data Analyst</title>
 
-import { motion } from "framer-motion";
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-const leaves = Array.from({ length: 12 });
+<style>
+:root {
+    --bg: #fdf8f6;
+    --text: #2b2b2b;
+    --subtle: #6e6e6e;
+    --accent: #d890a0;
+    --border: #f0e4e7;
+}
 
-export default function Home() {
-  return (
-    <div className="relative min-h-screen bg-[#fdf8f6] text-[#2b2b2b] overflow-hidden px-6 md:px-20 py-16">
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
 
-      {/* 🌸 Japanese Maple Tree SVG */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.18 }}
-        transition={{ duration: 2 }}
-        className="absolute bottom-0 left-0 w-[400px] md:w-[500px] pointer-events-none"
-      >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cherry_blossom_tree_vector.svg/512px-Cherry_blossom_tree_vector.svg.png"
-          alt="Pink Maple Tree"
-        />
-      </motion.div>
+/* 🌸 JAPANESE MAPLE TREE */
+.tree {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 420px;
+    opacity: 0.18;
+    z-index: -1;
+}
 
-      {/* 🍃 Falling Leaves */}
-      {leaves.map((_, i) => (
-        <motion.div
-          key={i}
-          initial={{ y: -100, x: 0, rotate: 0 }}
-          animate={{
-            y: "110vh",
-            x: [0, 100, -50, 150],
-            rotate: 360
-          }}
-          transition={{
-            duration: 12 + i,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute w-3 h-3 bg-pink-300 rounded-[50%_0_50%_50%]"
-          style={{ left: `${i * 8}%` }}
-        />
-      ))}
+/* 🍃 Falling Leaves (Wind Effect) */
+.leaf {
+    position: fixed;
+    top: -20px;
+    width: 14px;
+    height: 14px;
+    background: #f4a6b7;
+    border-radius: 50% 0 50% 50%;
+    opacity: 0.6;
+    animation: fall linear infinite;
+}
 
-      {/* 🌷 CONTENT */}
-      <div className="relative z-10 max-w-5xl mx-auto space-y-24">
+@keyframes fall {
+    0% {
+        transform: translate(0, -10vh) rotate(0deg);
+    }
+    100% {
+        transform: translate(200px, 110vh) rotate(360deg);
+    }
+}
 
-        {/* Header */}
-        <div>
-          <h1 className="font-serif text-5xl md:text-6xl font-semibold">
-            Disha Singh
-          </h1>
-          <p className="text-gray-500 mt-3">
-            Data Analyst | Python • SQL • Power BI
-          </p>
-          <div className="w-16 h-[3px] bg-pink-400 mt-6 rounded-full"></div>
+.container {
+    max-width: 1050px;
+    margin: 90px auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin: 0;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    color: var(--subtle);
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 25px 0;
+    border-radius: 10px;
+}
+
+section {
+    margin-bottom: 90px;
+}
+
+.about {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--subtle);
+    max-width: 780px;
+}
+
+.projects-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.project-card {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+.project-card h3 {
+    margin: 10px 0;
+    font-size: 1.35rem;
+}
+
+.project-card p {
+    color: var(--subtle);
+    line-height: 1.7;
+}
+
+.repo-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.repo-link:hover {
+    opacity: 0.7;
+}
+
+/* Contact */
+.contact-section {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+.contact {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact a {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--accent);
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.contact a:hover {
+    background: var(--accent);
+    color: white;
+}
+
+footer {
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: var(--subtle);
+}
+
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    .tree {
+        width: 260px;
+        opacity: 0.12;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌸 Japanese Maple Tree -->
+<img class="tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cherry_blossom_tree_vector.svg/512px-Cherry_blossom_tree_vector.svg.png">
+
+<!-- 🍃 Wind Leaves -->
+<div class="leaf" style="left:15%; animation-duration:12s;"></div>
+<div class="leaf" style="left:35%; animation-duration:15s;"></div>
+<div class="leaf" style="left:55%; animation-duration:18s;"></div>
+<div class="leaf" style="left:75%; animation-duration:14s;"></div>
+<div class="leaf" style="left:90%; animation-duration:16s;"></div>
+
+<div class="container">
+
+<header>
+    <h1>Disha Singh</h1>
+    <div class="subtitle">Data Analyst | Python • SQL • Power BI</div>
+    <div class="divider"></div>
+</header>
+
+<section>
+    <p class="about">
+        I am a Computer Science Engineer passionate about transforming complex datasets 
+        into meaningful business intelligence. With strong foundations in SQL architecture,
+        Python automation, and analytical problem-solving, I design scalable data-driven solutions.
+    </p>
+</section>
+
+<section>
+    <h2 class="projects-title">Selected Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <div class="project-tag">Data Intelligence</div>
+            <h3>Sales Performance Insight Engine</h3>
+            <p>Built an end-to-end Python analytics pipeline with interactive dashboards to identify revenue trends and performance gaps.</p>
+            <a href="#" class="repo-link">View Repository →</a>
         </div>
 
-        {/* About */}
-        <div className="max-w-2xl space-y-4 text-gray-600 leading-relaxed">
-          <p>
-            I am a Computer Science Engineer passionate about transforming
-            complex datasets into meaningful business intelligence.
-            With strong foundations in SQL architecture and Python automation,
-            I design scalable data-driven solutions.
-          </p>
-          <p>
-            💗 I believe data should not only inform decisions but inspire clarity.
-            Open to impactful opportunities and collaborations.
-          </p>
+        <div class="project-card">
+            <div class="project-tag">Machine Learning</div>
+            <h3>LLaMA-2 Financial Sentiment Model</h3>
+            <p>Fine-tuned LLaMA-2 using PEFT (LoRA) for financial sentiment analysis and improved domain-specific prediction reliability.</p>
+            <a href="#" class="repo-link">View Repository →</a>
         </div>
 
-        {/* Projects */}
-        <div>
-          <h2 className="font-serif text-3xl mb-12">
-            Selected Projects
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-12">
-
-            <ProjectCard
-              title="Sales Performance Insight Engine"
-              tag="Data Intelligence"
-              desc="Built an end-to-end Python analytics pipeline with dashboards to identify revenue trends."
-            />
-
-            <ProjectCard
-              title="LLaMA-2 Financial Sentiment Model"
-              tag="Machine Learning"
-              desc="Fine-tuned LLaMA-2 using PEFT (LoRA) for domain-specific sentiment analysis."
-            />
-
-            <ProjectCard
-              title="Enterprise SQL Optimization"
-              tag="Database Engineering"
-              desc="Optimized MySQL schemas with CTEs and window functions for performance."
-            />
-
-            <ProjectCard
-              title="Market Forecasting Model"
-              tag="Predictive Analytics"
-              desc="Developed predictive models using advanced feature engineering."
-            />
-
-          </div>
+        <div class="project-card">
+            <div class="project-tag">Database Engineering</div>
+            <h3>Enterprise SQL Optimization</h3>
+            <p>Designed optimized MySQL schemas using CTEs and window functions to improve query performance and ensure data integrity.</p>
+            <a href="#" class="repo-link">View Repository →</a>
         </div>
 
-        {/* Contact */}
-        <div className="bg-white border border-pink-100 rounded-2xl p-8 shadow-sm">
-          <h3 className="font-serif text-2xl mb-6">Let’s Connect 💌</h3>
-
-          <div className="flex flex-wrap gap-4">
-            <ContactBtn href="mailto:singhdisha2511@gmail.com">
-              Email
-            </ContactBtn>
-
-            <ContactBtn href="tel:+919695953339">
-              9695953339
-            </ContactBtn>
-
-            <ContactBtn href="https://www.linkedin.com/in/disha-singh-63907424a">
-              LinkedIn
-            </ContactBtn>
-
-            <ContactBtn href="https://github.com/disha2511">
-              GitHub
-            </ContactBtn>
-          </div>
+        <div class="project-card">
+            <div class="project-tag">Predictive Analytics</div>
+            <h3>Market Forecasting Model</h3>
+            <p>Built predictive models with feature engineering techniques to forecast trends and reduce operational risk.</p>
+            <a href="#" class="repo-link">View Repository →</a>
         </div>
 
-      </div>
     </div>
-  );
-}
+</section>
 
-function ProjectCard({ title, tag, desc }) {
-  return (
-    <motion.div
-      whileHover={{ y: -6 }}
-      className="border-b border-pink-100 pb-6"
-    >
-      <span className="text-sm uppercase tracking-wider text-pink-400 font-medium">
-        {tag}
-      </span>
-      <h3 className="text-xl mt-2 font-medium">{title}</h3>
-      <p className="text-gray-600 mt-3 leading-relaxed">{desc}</p>
-    </motion.div>
-  );
-}
+<section class="contact-section">
+    <h2 class="contact-title">Let’s Connect</h2>
+    <div class="contact">
+        <a href="mailto:singhdisha2511@gmail.com">Email</a>
+        <a href="tel:+919695953339">9695953339</a>
+        <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">LinkedIn</a>
+        <a href="https://github.com/disha2511" target="_blank">GitHub</a>
+    </div>
+</section>
 
-function ContactBtn({ href, children }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      className="px-5 py-2 rounded-full border border-pink-400 text-pink-500 hover:bg-pink-400 hover:text-white transition duration-300"
-    >
-      {children}
-    </a>
-  );
-}
+<footer>
+    © 2026 Disha Singh
+</footer>
+
+</div>
+
+</body>
+</html>
