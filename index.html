@@ -1,200 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disha Singh // Data Analyst Portfolio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disha Singh | Data Analyst</title>
 
-        :root {
-            --disco-pink: #ff00ff;
-            --disco-blue: #00ffff;
-            --disco-purple: #7000ff;
-            --glass: rgba(255, 255, 255, 0.05);
-            --bg: #050505;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            background-color: var(--bg);
-            color: #fff;
-            font-family: 'Outfit', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-            background: radial-gradient(circle at 50% -20%, #1a0022, #050505);
-        }
+<style>
+:root {
+    --text: #111;
+    --subtle: #666;
+    --border: #eaeaea;
+    --bg: #ffffff;
+}
 
-        /* --- AMBIENT DISCO GLOW --- */
-        .disco-light {
-            position: fixed;
-            width: 600px; height: 600px;
-            background: var(--disco-purple);
-            filter: blur(180px);
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0.15;
-            animation: moveLight 12s infinite alternate;
-        }
-        @keyframes moveLight {
-            0% { top: -10%; left: -10%; background: var(--disco-pink); }
-            100% { top: 70%; left: 70%; background: var(--disco-blue); }
-        }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
 
-        .marquee {
-            background: linear-gradient(90deg, var(--disco-pink), var(--disco-blue));
-            color: #000; padding: 12px 0; font-weight: 800;
-            text-transform: uppercase; overflow: hidden;
-            white-space: nowrap; position: fixed; top: 0; width: 100%; z-index: 100;
-        }
-        .marquee-content { display: inline-block; animation: scroll 25s linear infinite; }
-        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+.container {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+}
 
-        .container { max-width: 1100px; margin: 140px auto; padding: 20px; }
+header {
+    margin-bottom: 100px;
+}
 
-        header { text-align: center; margin-bottom: 80px; }
-        h1 { 
-            font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 12vw, 7rem); 
-            line-height: 0.8; margin: 0; cursor: pointer;
-            background: linear-gradient(to bottom, #fff, #999);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            transition: 0.5s;
-        }
-        h1:hover { letter-spacing: 10px; -webkit-text-fill-color: var(--disco-blue); }
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
 
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 40px;
-            padding: 50px;
-            margin-bottom: 40px;
-        }
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--subtle);
+    margin-top: 12px;
+}
 
-        .project-grid-main {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
+section {
+    margin-bottom: 100px;
+}
 
-        .project-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 30px;
-            padding: 30px;
-            transition: 0.4s;
-            display: flex; flex-direction: column;
-        }
-        .project-card:hover { 
-            transform: translateY(-10px); 
-            border-color: var(--disco-blue);
-            background: rgba(0, 255, 255, 0.05);
-        }
+.about {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--subtle);
+    max-width: 800px;
+}
 
-        .project-chip {
-            background: var(--disco-pink); color: #fff;
-            padding: 5px 15px; border-radius: 50px;
-            font-size: 0.7rem; font-weight: 800; width: fit-content;
-            margin-bottom: 20px; text-transform: uppercase;
-        }
+.projects-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
 
-        .project-card h3 { font-family: 'Syne', sans-serif; font-size: 1.8rem; margin: 0 0 15px 0; color: #fff; }
-        .project-card p { font-size: 0.95rem; line-height: 1.6; color: #bbb; margin-bottom: 20px; flex-grow: 1; }
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
 
-        .repo-link {
-            font-size: 0.8rem; font-weight: bold; color: var(--disco-blue);
-            text-decoration: none; display: flex; align-items: center; gap: 8px;
-        }
+.project-card {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 30px;
+}
 
-        .social-dock {
-            display: flex; justify-content: center; flex-wrap: wrap;
-            gap: 15px; margin-top: 80px;
-        }
-        .social-btn {
-            background: #fff; color: #000; padding: 18px 35px;
-            border-radius: 100px; text-decoration: none; font-weight: 800;
-            transition: 0.3s; cursor: pointer; border: none; font-family: 'Outfit';
-        }
-        .social-btn:hover { background: var(--disco-pink); color: #fff; transform: scale(1.1) rotate(2deg); }
+.project-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--subtle);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        @media (max-width: 900px) { .project-grid-main { grid-template-columns: 1fr; } }
-    </style>
+.project-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    color: var(--subtle);
+    line-height: 1.6;
+}
+
+.repo-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+}
+
+.repo-link:hover {
+    text-decoration: underline;
+}
+
+.contact {
+    margin-top: 80px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact a {
+    border: 1px solid var(--border);
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.contact a:hover {
+    background: #111;
+    color: #fff;
+}
+
+footer {
+    margin-top: 80px;
+    font-size: 0.9rem;
+    color: var(--subtle);
+}
+
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="disco-light"></div>
-    <div class="marquee">
-        <div class="marquee-content">
-            ✦ DISHA SINGH ✦ DATA ANALYST ✦ PYTHON & SQL EXPERT ✦ 8.1 CGPA ✦ HACKERRANK 3★ ✦ 1000+ LEETCODE CHALLENGES SMASHED ✦ REPO: DISHA2511/PORTFOLIO ✦ FREE TO CONNECT ✦
-        </div>
-    </div>
+<div class="container">
 
-    <div class="container">
-        <header>
-            <h1 onclick="this.innerText='LET\'S WORK'">DISHA<br>SINGH</h1>
-            <p style="font-size: 1.4rem; color: var(--disco-blue); font-weight: 600; margin-top: 25px; letter-spacing: 4px;">
-                DATA ANALYST 
-            </p>
-        </header>
+<header>
+    <h1>Disha Singh</h1>
+    <div class="subtitle">Data Analyst | Python • SQL • Power BI</div>
+</header>
 
-       <section class="glass-card">
-    <h2 style="font-family: 'Syne'; font-size: 2.5rem; margin-top: 0;">The Vibe Check ✅</h2>
-    <p style="font-size: 1.25rem; line-height: 1.8; color: #ddd;">
-        Driven by a passion for technical excellence, I am a Computer Science Engineer who thrives on translating complex raw datasets into actionable business intelligence. 
-        My analytical foundation is built on rigorous problem-solving, proven by mastering 1000+ LeetCode challenges and maintaining a 3-star proficiency in Python and MySQL. 
-        I specialize in architecting scalable SQL databases and developing Python-based automation to drive high-performance results in fast-paced corporate environments. 
-        From fine-tuning LLMs for financial sentiment to building dynamic Power BI dashboards, I am committed to bridging the gap between raw information and strategic success.
+<section>
+    <p class="about">
+        I am a Computer Science Engineer focused on transforming complex datasets into clear,
+        actionable business insights. With strong foundations in SQL architecture,
+        Python automation, and analytical problem-solving, I build scalable solutions
+        that bridge raw data and strategic decision-making.
         <br><br>
-        <span style="color: var(--disco-pink); font-weight: bold;">Status : Open for opportunities .</span>
+        Open to full-time opportunities and impactful collaborations.
     </p>
-     </section>
-<h2 style="font-family: 'Syne'; font-size: 3rem; text-align: center; margin-bottom: 50px;">Project Portfolios 💾</h2>
+</section>
 
-<div class="project-grid-main">
-    <div class="project-card">
-        <span class="project-chip">Intelligence Dashboard</span>
-        <h3>Sales Performance Insight Engine</h3>
-        <p>Architected an end-to-end Python pipeline to identify regional stagnation and revenue leaks. Engineered interactive Power BI dashboards that translate complex sales trends into actionable visual stories for real-time strategic shifts.</p>
-        <a href="https://github.com/disha2511/YOUR_SALES_PROJECT" target="_blank" class="repo-link">🔗 View Repository</a>
-    </div>
+<section>
+    <h2 class="projects-title">Selected Projects</h2>
 
-    <div class="project-card">
-        <span class="project-chip">Neural Networks</span>
-        <h3>LLaMA-2 Financial Neural Net</h3>
-        <p>Fine-tuned LLaMA-2 using PEFT (LoRA) and PyTorch for domain-specific sentiment analysis. Achieved 83% accuracy in interpreting specialized market nuances, providing a high-reliability layer for predictive risk assessment.</p>
-        <a href="https://github.com/disha2511/llama2-financial-sentiment-analysis.git" target="_blank" class="repo-link">🔗 View Repository</a>
-    </div>
+    <div class="project-grid">
 
-    <div class="project-card">
-        <span class="project-chip">SQL Architecture</span>
-        <h3>Enterprise Database Optimization</h3>
-        <p>Developed complex MySQL schemas using CTEs and window functions to automate inventory and revenue tracking. Successfully reduced query retrieval latency by 30% while ensuring 100% data integrity for management audits.</p>
-        <a href="https://github.com/disha2511/YOUR_SQL_PROJECT" target="_blank" class="repo-link">🔗 View Repository</a>
-    </div>
-
-    <div class="project-card">
-        <span class="project-chip">Predictive Analytics</span>
-        <h3>Python-Driven Market Forecasting</h3>
-        <p>Built robust predictive models using Scikit-learn to forecast future data trends from historical metrics. Applied advanced feature engineering to identify critical variables, minimizing operational risks through data-driven trend forecasting.</p>
-        <a href="https://github.com/disha2511/YOUR_FORECASTING_PROJECT" target="_blank" class="repo-link">🔗 View Repository</a>
-    </div>
-</div>
-   
-   
-        <div class="social-dock">
-            <a href="tel:+919695953339" class="social-btn">🤙 9695953339</a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=singhdisha2511@gmail.com" target="_blank" class="social-btn">✉️ singhdisha2511@gmail.com</a>
-            <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank" class="social-btn">🔗 LINKEDIN</a>
-            <a href="https://github.com/disha2511" target="_blank" class="social-btn">💻 GITHUB</a>
+        <div class="project-card">
+            <div class="project-tag">Data Intelligence</div>
+            <h3>Sales Performance Insight Engine</h3>
+            <p>
+                Built an end-to-end Python analytics pipeline and Power BI dashboards to
+                identify revenue leaks and regional stagnation trends for strategic planning.
+            </p>
+            <a href="https://github.com/disha2511/YOUR_SALES_PROJECT" target="_blank" class="repo-link">
+                View Repository →
+            </a>
         </div>
+
+        <div class="project-card">
+            <div class="project-tag">Machine Learning</div>
+            <h3>LLaMA-2 Financial Sentiment Model</h3>
+            <p>
+                Fine-tuned LLaMA-2 using PEFT (LoRA) for domain-specific sentiment analysis,
+                achieving 83% accuracy in interpreting financial market signals.
+            </p>
+            <a href="https://github.com/disha2511/llama2-financial-sentiment-analysis.git" target="_blank" class="repo-link">
+                View Repository →
+            </a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-tag">Database Engineering</div>
+            <h3>Enterprise SQL Optimization</h3>
+            <p>
+                Designed optimized MySQL schemas with CTEs and window functions,
+                reducing query latency by 30% while ensuring audit-level data integrity.
+            </p>
+            <a href="https://github.com/disha2511/YOUR_SQL_PROJECT" target="_blank" class="repo-link">
+                View Repository →
+            </a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-tag">Predictive Analytics</div>
+            <h3>Market Forecasting with Scikit-Learn</h3>
+            <p>
+                Developed machine learning models with advanced feature engineering
+                to forecast operational trends and reduce risk exposure.
+            </p>
+            <a href="https://github.com/disha2511/YOUR_FORECASTING_PROJECT" target="_blank" class="repo-link">
+                View Repository →
+            </a>
+        </div>
+
     </div>
-<p style="text-align: center; margin-top: 30px; font-family: 'Syne'; color: var(--disco-blue); letter-spacing: 2px;">
-    ✦ FEEL FREE TO CONNECT FOR COLLABORATIONS OR OPPORTUNITIES ✦
-</p>
+</section>
+
+<section class="contact">
+    <a href="tel:+919695953339">Call</a>
+    <a href="mailto:singhdisha2511@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/disha-singh-63907424a" target="_blank">LinkedIn</a>
+    <a href="https://github.com/disha2511" target="_blank">GitHub</a>
+</section>
+
+<footer>
+    © 2026 Disha Singh. All rights reserved.
+</footer>
+
+</div>
+
 </body>
 </html>
-
-
-
-
-
